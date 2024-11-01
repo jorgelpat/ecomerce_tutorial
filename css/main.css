@@ -2,7 +2,8 @@
 
 :root {
     --clr-main: #4b33a8;
-    /* --clr-main-light: #785ce9; */
+    /* --clr-main-dark: #221655; */
+    --clr-main-light: #785ce9;
     --clr-white: #ececec;
     --clr-gray: #e2e2e2;
     --clr-red: #961818;
@@ -36,10 +37,10 @@ a {
 
 aside {
     padding: 2rem;
-    background: var(--clr-white);
+    color: var(--clr-white);
     position: sticky; /*lo que hay en el aside queda fijo al bajar la pantalla*/
     top: 0;
-    height: 100vh; /*se agrega altura del tamaño de la pantalla (así funcionar el sticky)*/
+    height: 100vh; /*se agrega la altura del tamaño de la pantalla (así podrá funcionar el sticky)*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,5 +52,63 @@ aside {
 }
 
 .texto-footer{
-    color: gray;
+    color: var(--clr-main-light);
+    font-size: .85rem;
+}
+
+main {
+    background-color: var(--clr-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.titulo-principal{
+    color: var(--clr-main);
+    margin-bottom: 2rem;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.producto-imagen {
+    max-width: 100%; /*se usa para que las imagenes no salgan del ancho de la pantalla*/
+    border-radius: 1rem;
+}
+
+.producto-detalles {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative; /*para que los detalles se vean encima de la imagen*/
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.producto-titulo {
+    font-size: 1rem;
+}
+
+.producto-agregar {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer; /*Al acercar el cursor, pasa de la flecha a la mano*/
+    border: 2px solid var(--clr-white); /*El color del borde es para combinar con el :hover*/
+    transition: background-color .2s, color .2s; /*Se usa para ralentizar el cambio del background y color*/
+}
+
+.producto-agregar:hover {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
 }
